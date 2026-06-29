@@ -1,43 +1,28 @@
 :root {
-  /* Paleta de marca Banco Andino — colores del textil andino */
-  --hb-red: #e2132b;
-  --hb-red-dark: #b50f22;
-  --hb-red-light: #fde8eb;
-  --hb-magenta: #e6398b;
+  /* Paleta Prymera — colores bancarios institucionales */
+  --hb-primary: #002244;
+  --hb-primary-dark: #001a33;
+  --hb-primary-light: #e8eef5;
+  --hb-secondary: #0066cc;
+  --hb-accent: #e8a317;
+  --hb-accent-dark: #c78b0a;
   --hb-turquesa: #00a9a5;
-  --hb-naranja: #f7941e;
-  --hb-amarillo: #fbc02d;
-  --hb-verde-t: #4caf50;
-  --hb-morado: #8e24aa;
+  --hb-verde: #2e7d32;
+  --hb-red: #c62828;
+  --hb-red-dark: #9a1e1e;
+  --hb-red-light: #fde8eb;
+  --hb-amber: #f57f17;
 
-  --hb-bg: #fbf7f8;
-  --hb-text: #2b2b3a;
-  --hb-muted: #6b6b7b;
-  --hb-border: #f0e6ea;
-  --hb-green: #16a34a;
-  --hb-amber: #d97706;
-  --hb-shadow: 0 1px 3px rgba(16, 24, 40, 0.08), 0 1px 2px rgba(16, 24, 40, 0.06);
-  --hb-radius: 14px;
+  --hb-bg: #f5f7fa;
+  --hb-text: #1a1a2e;
+  --hb-muted: #6b7280;
+  --hb-border: #e2e8f0;
+  --hb-green: #2e7d32;
+  --hb-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --hb-radius: 12px;
 
-  /* Gradiente y franja tejida característicos de la marca */
-  --hb-grad: linear-gradient(110deg, #8e24aa, #e2132b 55%, #f7941e);
-  --hb-grad-login: linear-gradient(135deg, #8e24aa, #e2132b 50%, #f7941e);
-  --hb-franja: repeating-linear-gradient(
-    90deg,
-    #e2132b 0 14px,
-    #fbc02d 14px 22px,
-    #00a9a5 22px 36px,
-    #8e24aa 36px 44px,
-    #4caf50 44px 58px,
-    #e6398b 58px 66px,
-    #f7941e 66px 80px
-  );
-}
-
-/* Franja tejida superior reutilizable */
-.hb-franja-top {
-  height: 6px;
-  background: var(--hb-franja);
+  --hb-grad: linear-gradient(135deg, #002244, #003366);
+  --hb-grad-login: linear-gradient(135deg, #002244, #003366 50%, #004d99);
 }
 
 * { box-sizing: border-box; }
@@ -64,7 +49,7 @@ button {
   min-height: calc(100vh - 132px);
 }
 .hb-container {
-  max-width: 1080px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 24px 18px 48px;
 }
@@ -72,7 +57,7 @@ button {
 .hb-page-title {
   font-size: 22px;
   font-weight: 700;
-  color: var(--hb-red);
+  color: #002244;
   margin: 0 0 4px;
 }
 .hb-page-sub {
@@ -87,7 +72,7 @@ button {
   color: #374151;
 }
 
-/* ====== Header ====== */
+/* ====== Header (authenticated) ====== */
 .hb-header {
   background: var(--hb-grad);
   color: #fff;
@@ -101,7 +86,7 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  max-width: 1080px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 12px 18px;
 }
@@ -115,7 +100,7 @@ button {
 }
 .hb-logo-badge {
   background: #fff;
-  color: var(--hb-red);
+  color: var(--hb-primary);
   width: 38px; height: 38px;
   border-radius: 10px;
   display: grid;
@@ -140,13 +125,13 @@ button {
   font-variant-numeric: tabular-nums;
 }
 
-/* Menú horizontal de íconos circulares */
+/* Menú horizontal */
 .hb-menu {
   display: flex;
   gap: 8px;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 1080px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 6px 18px 14px;
 }
@@ -170,7 +155,7 @@ button {
   width: 46px; height: 46px;
   border-radius: 50%;
   background: #fff;
-  color: var(--hb-red);
+  color: var(--hb-primary);
   display: grid;
   place-items: center;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
@@ -180,7 +165,6 @@ button {
   font-weight: 600;
   text-align: center;
 }
-/* Dropdown */
 .hb-menu-wrap { position: relative; }
 .hb-dropdown {
   position: absolute;
@@ -209,7 +193,7 @@ button {
   font-size: 14px;
   color: var(--hb-text);
 }
-.hb-dropdown button:hover { background: var(--hb-red-light); color: var(--hb-red-dark); }
+.hb-dropdown button:hover { background: var(--hb-primary-light); color: var(--hb-primary); }
 
 /* ====== Card ====== */
 .hb-card {
@@ -265,23 +249,23 @@ button {
   align-items: center;
   gap: 8px;
   border: none;
-  border-radius: 9px;
-  padding: 10px 16px;
+  border-radius: 8px;
+  padding: 11px 20px;
   font-size: 14px;
   font-weight: 600;
-  background: var(--hb-red);
+  background: #002244;
   color: #fff;
   transition: background 0.15s, opacity 0.15s;
 }
-.hb-btn:hover { background: var(--hb-red-dark); }
+.hb-btn:hover { background: #001a33; }
 .hb-btn:disabled { opacity: 0.6; cursor: not-allowed; }
 .hb-btn-sm { padding: 6px 11px; font-size: 12.5px; border-radius: 7px; }
 .hb-btn-ghost {
   background: #fff;
-  color: var(--hb-red);
-  border: 1px solid var(--hb-red);
+  color: #002244;
+  border: 1px solid #e2e8f0;
 }
-.hb-btn-ghost:hover { background: var(--hb-red-light); }
+.hb-btn-ghost:hover { background: #e8eef5; }
 .hb-btn-gray {
   background: #eef0f3;
   color: #374151;
@@ -322,7 +306,7 @@ button {
   width: 100%;
   padding: 11px 13px;
   border: 1px solid var(--hb-border);
-  border-radius: 9px;
+  border-radius: 8px;
   font-size: 14px;
   font-family: inherit;
   background: #fff;
@@ -330,8 +314,8 @@ button {
 }
 .hb-input:focus, .hb-select:focus {
   outline: none;
-  border-color: var(--hb-red);
-  box-shadow: 0 0 0 3px rgba(227,6,19,0.12);
+  border-color: #002244;
+  box-shadow: 0 0 0 3px rgba(0,34,68,0.12);
 }
 .hb-grid-2 {
   display: grid;
@@ -352,7 +336,7 @@ button {
   gap: 10px;
   margin-bottom: 16px;
 }
-.hb-alert-error { background: #fdeaea; color: var(--hb-red-dark); border: 1px solid #f6c5c8; }
+.hb-alert-error { background: #fdeaea; color: #9a1e1e; border: 1px solid #f6c5c8; }
 .hb-alert-info { background: #eef4ff; color: #1d4ed8; border: 1px solid #cdddff; }
 .hb-alert-success { background: #e6f4ea; color: var(--hb-green); border: 1px solid #bfe3c8; }
 .hb-alert-warn { background: #fef3e2; color: var(--hb-amber); border: 1px solid #f6dcae; }
@@ -369,8 +353,8 @@ button {
 }
 .hb-spinner {
   width: 38px; height: 38px;
-  border: 4px solid var(--hb-red-light);
-  border-top-color: var(--hb-red);
+  border: 4px solid #e8eef5;
+  border-top-color: #002244;
   border-radius: 50%;
   animation: hb-spin 0.8s linear infinite;
 }
@@ -389,23 +373,22 @@ button {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 8px;
-  background: var(--hb-franja);
+  height: 4px;
+  background: var(--hb-accent);
 }
 .hb-login-card {
   background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 18px 50px rgba(0,0,0,0.3);
-  padding: 32px 32px 36px;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  padding: 36px 36px 40px;
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
 }
 .hb-login-franja {
-  height: 6px;
-  border-radius: 6px;
-  background: var(--hb-franja);
-  background-size: 80px;
-  margin-bottom: 22px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--hb-accent);
+  margin-bottom: 24px;
 }
 .hb-login-head {
   text-align: center;
@@ -416,13 +399,13 @@ button {
   border-radius: 14px;
   font-size: 26px;
   margin: 0 auto 12px;
-  background: var(--hb-red);
+  background: var(--hb-primary);
   color: #fff;
 }
 .hb-login-head h1 {
   margin: 0;
   font-size: 22px;
-  color: var(--hb-red);
+  color: var(--hb-primary);
 }
 .hb-login-head p {
   margin: 4px 0 0;
@@ -436,7 +419,7 @@ button {
   color: var(--hb-muted);
 }
 
-/* ====== Home ====== */
+/* ====== Home (authenticated) ====== */
 .hb-quick-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -456,12 +439,12 @@ button {
   text-align: left;
   width: 100%;
 }
-.hb-quick-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(227,6,19,0.15); }
+.hb-quick-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,34,68,0.12); }
 .hb-quick-icon {
   width: 46px; height: 46px;
   border-radius: 50%;
-  background: var(--hb-red-light);
-  color: var(--hb-red);
+  background: #e8eef5;
+  color: #002244;
   display: grid; place-items: center;
   flex-shrink: 0;
 }
@@ -489,7 +472,7 @@ button {
   padding: 0;
   margin-bottom: 14px;
 }
-.hb-back:hover { color: var(--hb-red); }
+.hb-back:hover { color: #002244; }
 
 .hb-comprobante {
   border: 2px dashed var(--hb-green);
@@ -499,176 +482,343 @@ button {
 }
 .hb-comprobante h3 {
   margin: 0 0 14px;
-  color: var(--hb-green);
+  color: #2e7d32;
   display: flex; align-items: center; gap: 8px;
 }
 
 /* ============================================================
-   LANDING PÚBLICO (home marketero)
+   LANDING PÚBLICO — ESTILO PRYMERA
    ============================================================ */
 .lp-page {
   background: #fff;
   min-height: 100vh;
 }
 
-/* ---- Header público ---- */
+/* ---- Header público (Prymera exacto) ---- */
 .lp-header {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 60;
-  background: #fff;
-  box-shadow: 0 1px 0 var(--hb-border), var(--hb-shadow);
+  background: linear-gradient(180deg, #001a33 0%, #002d5c 100%);
 }
+
+/* ---- Top bar — Personas/Empresas/Pymes + Home/Blog/Ubícanos/social ---- */
+.lp-topbar {
+  background: #002244;
+  color: rgba(255,255,255,0.75);
+  font-size: 13px;
+  padding: 0;
+}
+.lp-topbar-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+}
+.lp-topbar-left {
+  display: flex;
+  gap: 0;
+}
+.lp-topbar-left a {
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 10px 16px;
+  transition: all 0.2s;
+  border-bottom: 2px solid transparent;
+}
+.lp-topbar-left a:hover,
+.lp-topbar-left a.active {
+  color: #fff;
+  border-bottom-color: var(--hb-accent);
+}
+.lp-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.lp-topbar-right a {
+  color: rgba(255,255,255,0.65);
+  font-size: 13px;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+.lp-topbar-right a:hover { color: #fff; }
+
+/* ---- Main nav — Logo + Créditos/Ahorros/Otros/Cambio con iconos ---- */
 .lp-nav {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 12px 20px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
+  height: 80px;
+
 }
-.lp-brand { background: none; border: none; cursor: pointer; padding: 0; }
-.lp-nav-links {
+.lp-brand { background: none; border: none; cursor: pointer; padding: 0; flex-shrink: 0; }
+.lp-main-nav {
   display: flex;
-  gap: 22px;
-  margin-left: 18px;
-  flex: 1;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
 }
-.lp-nav-links a {
-  color: var(--hb-text);
+.lp-main-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
   font-weight: 600;
-  font-size: 14px;
-  padding: 6px 2px;
-  border-bottom: 2px solid transparent;
+  font-size: 15px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  white-space: nowrap;
 }
-.lp-nav-links a:hover { color: var(--hb-red); border-bottom-color: var(--hb-red); text-decoration: none; }
-.lp-nav-actions { display: flex; align-items: center; gap: 10px; }
+.lp-main-nav-item:hover {
+  background: rgba(255,255,255,0.12);
+}
+.lp-nav-actions { display: flex; align-items: center; gap: 12px; }
 .lp-cta {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--hb-red);
+  background: var(--hb-accent);
   color: #fff;
   border: none;
-  padding: 10px 18px;
-  border-radius: 999px;
+  padding: 10px 22px;
+  border-radius: 6px;
   font-weight: 700;
   font-size: 14px;
+  transition: background 0.2s;
 }
-.lp-cta:hover { background: var(--hb-red-dark); }
-.lp-burger { display: none; background: none; border: none; color: var(--hb-text); }
+.lp-cta:hover { background: var(--hb-accent-dark); }
+.lp-burger { display: none; background: none; border: none; color: #fff; }
 
-/* ---- Hero ---- */
+/* ---- Mobile menu ---- */
+.lp-mobile-menu {
+  background: #002244;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.lp-mobile-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 8px;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.lp-mobile-item:hover { background: rgba(255,255,255,0.1); text-decoration: none; }
+
+/* ---- Hero (Carrusel Prymera — imagen + texto) ---- */
 .lp-hero {
-  background: var(--hb-grad);
+  background: linear-gradient(135deg, #1a8cff 0%, #2196f3 30%, #0d47a1 100%);
   color: #fff;
   position: relative;
   overflow: hidden;
+  min-height: 520px;
 }
-.lp-hero::after {
-  content: '';
+.lp-hero-bg {
   position: absolute;
-  right: -120px; top: -120px;
-  width: 420px; height: 420px;
-  background: radial-gradient(circle, rgba(255,255,255,0.18), transparent 70%);
-  border-radius: 50%;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, #1a8cff 0%, #2196f3 30%, #0d47a1 100%);
+  z-index: 1;
+}
+.lp-hero-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  z-index: 2;
 }
 .lp-hero-inner {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 64px 20px 72px;
+  padding: 60px 20px 80px;
   position: relative;
-  z-index: 1;
-  text-align: center;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 520px;
 }
-.lp-hero-text { max-width: 720px; margin: 0 auto; }
-.lp-hero-actions { justify-content: center; }
-.lp-hero-text p { margin-left: auto; margin-right: auto; }
-.lp-hero-tag {
-  display: inline-block;
-  background: rgba(255,255,255,0.18);
-  padding: 5px 14px;
-  border-radius: 999px;
-  font-size: 12.5px;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  margin-bottom: 16px;
+
+/* Placeholder cuando no hay imagen */
+.lp-hero-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
 }
-.lp-hero-text h1 {
-  font-size: 42px;
-  line-height: 1.1;
-  margin: 0 0 16px;
+
+/* Lado derecho — contenido del slide */
+.lp-hero-content {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 40px;
+  max-width: 500px;
+}
+.lp-hero-title {
+  font-size: 48px;
   font-weight: 800;
+  line-height: 1.05;
+  margin: 0 0 12px;
   letter-spacing: -0.5px;
 }
-.lp-hero-text p {
-  font-size: 16.5px;
-  line-height: 1.6;
-  margin: 0 0 26px;
-  max-width: 520px;
-  opacity: 0.95;
+.lp-hero-subtitle {
+  font-size: 20px;
+  margin: 0 0 32px;
+  opacity: 0.9;
+  font-weight: 500;
 }
-.lp-hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.lp-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--hb-accent);
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  align-self: flex-start;
+}
+.lp-hero-btn:hover {
+  background: var(--hb-accent-dark);
+  transform: translateY(-1px);
+}
+
+/* Indicadores del carrusel */
+.lp-hero-dots {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 5;
+}
+.lp-hero-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.6);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0;
+}
+.lp-hero-dot.active {
+  background: var(--hb-accent);
+  border-color: var(--hb-accent);
+  transform: scale(1.15);
+}
+.lp-hero-dot:hover:not(.active) {
+  border-color: #fff;
+}
+
+/* Curva inferior del hero */
+.lp-hero-wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  line-height: 0;
+}
+.lp-hero-wave svg {
+  width: 100%;
+  height: 80px;
+}
 
 .lp-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  border-radius: 999px;
-  padding: 12px 22px;
+  border-radius: 6px;
+  padding: 14px 28px;
   font-weight: 700;
   font-size: 15px;
   border: none;
   cursor: pointer;
+  transition: all 0.2s;
 }
-.lp-btn-light { background: #fff; color: var(--hb-red); }
-.lp-btn-light:hover { background: #fff0f1; text-decoration: none; }
-.lp-btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.7); }
-.lp-btn-outline:hover { background: rgba(255,255,255,0.14); text-decoration: none; }
-.lp-btn-primary { background: var(--hb-red); color: #fff; }
-.lp-btn-primary:hover { background: var(--hb-red-dark); }
+.lp-btn-light { background: #fff; color: var(--hb-primary); }
+.lp-btn-light:hover { background: #f0f4f8; text-decoration: none; }
+.lp-btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.6); }
+.lp-btn-outline:hover { background: rgba(255,255,255,0.12); text-decoration: none; }
+.lp-btn-primary { background: var(--hb-accent); color: #fff; }
+.lp-btn-primary:hover { background: var(--hb-accent-dark); }
 
-/* ---- Widget de ingreso (tarjeta de ahorros) ---- */
+/* ---- Widget de ingreso ---- */
 .lp-login-widget {
   background: #fff;
   color: var(--hb-text);
-  border-radius: 16px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
   overflow: hidden;
 }
 .lp-login-widget-head {
-  background: var(--hb-text);
+  background: var(--hb-primary);
   color: #fff;
-  padding: 14px 20px;
+  padding: 16px 24px;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 16px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
-.lp-login-widget-body { padding: 22px 20px 20px; }
+.lp-login-widget-body { padding: 24px; }
 .lp-login-widget-body label {
   display: block;
   font-size: 13px;
   font-weight: 600;
   margin-bottom: 7px;
+  color: var(--hb-text);
 }
 .lp-input-wrap {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   border: 1px solid var(--hb-border);
-  border-radius: 10px;
-  padding: 0 12px;
-  margin-bottom: 14px;
+  border-radius: 8px;
+  padding: 0 14px;
+  margin-bottom: 16px;
   color: #9ca3af;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
-.lp-input-wrap:focus-within { border-color: var(--hb-red); box-shadow: 0 0 0 3px rgba(226,19,43,0.12); }
+.lp-input-wrap:focus-within { border-color: var(--hb-secondary); box-shadow: 0 0 0 3px rgba(0,102,204,0.12); }
 .lp-input-wrap input {
   border: none;
   outline: none;
-  padding: 12px 0;
+  padding: 14px 0;
   font-size: 15px;
   width: 100%;
   color: var(--hb-text);
@@ -678,242 +828,386 @@ button {
   font-size: 12px;
   color: var(--hb-muted);
   text-align: center;
-  margin: 14px 0 0;
+  margin: 16px 0 0;
 }
 
 /* ---- Barra de accesos rápidos ---- */
 .lp-quickbar {
   max-width: 1180px;
-  margin: -28px auto 0;
+  margin: -32px auto 0;
   padding: 0 20px;
   position: relative;
   z-index: 2;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+  gap: 16px;
 }
 .lp-quick {
   background: #fff;
   border: 1px solid var(--hb-border);
-  border-radius: 12px;
-  box-shadow: var(--hb-shadow);
-  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   font-weight: 700;
   font-size: 14px;
   color: var(--hb-text);
   cursor: pointer;
+  transition: all 0.2s;
 }
-.lp-quick:hover { border-color: var(--hb-red); color: var(--hb-red); }
-.lp-quick svg { color: var(--hb-red); }
+.lp-quick:hover { border-color: var(--hb-primary); color: var(--hb-primary); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,51,102,0.12); }
+.lp-quick svg { color: var(--hb-primary); }
 
 /* ---- Secciones ---- */
 .lp-section {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 64px 20px;
+  padding: 72px 20px;
 }
-.lp-section-head { text-align: center; margin-bottom: 36px; }
-.lp-section-head h2 { font-size: 30px; margin: 0 0 8px; font-weight: 800; }
+.lp-section-head { text-align: center; margin-bottom: 40px; }
+.lp-section-head h2 { font-size: 32px; margin: 0 0 10px; font-weight: 800; color: var(--hb-primary); }
 .lp-section-head p { color: var(--hb-muted); margin: 0; font-size: 16px; }
 
-/* ---- Productos ---- */
+/* ---- Productos (estilo Prymera) ---- */
 .lp-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
 .lp-product {
   background: #fff;
   border: 1px solid var(--hb-border);
-  border-radius: 16px;
-  padding: 26px 22px;
+  border-radius: 12px;
+  padding: 28px 24px;
   box-shadow: var(--hb-shadow);
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
 }
+.lp-product::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--hb-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+.lp-product:hover::before { transform: scaleX(1); }
 .lp-product:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.10); }
 .lp-product-icon {
-  width: 54px; height: 54px;
-  border-radius: 14px;
+  width: 56px; height: 56px;
+  border-radius: 12px;
   display: grid;
   place-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
-.lp-product h3 { margin: 0 0 8px; font-size: 18px; }
-.lp-product p { margin: 0 0 16px; color: var(--hb-muted); font-size: 14px; line-height: 1.55; }
+.lp-product h3 { margin: 0 0 10px; font-size: 18px; color: var(--hb-primary); }
+.lp-product p { margin: 0 0 18px; color: var(--hb-muted); font-size: 14px; line-height: 1.6; }
 .lp-product-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   background: none;
   border: none;
-  color: var(--hb-red);
+  color: var(--hb-secondary);
   font-weight: 700;
   font-size: 14px;
   cursor: pointer;
   padding: 0;
+  transition: gap 0.2s;
 }
-.lp-product-link:hover { gap: 9px; }
+.lp-product-link:hover { gap: 9px; color: var(--hb-primary); }
 
-/* ---- Promo ---- */
+/* ---- Promo (destacado Prymera) ---- */
 .lp-promo {
-  background: var(--hb-grad-login);
+  background: linear-gradient(135deg, var(--hb-primary), var(--hb-primary-dark));
   color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.lp-promo::before {
+  content: '';
+  position: absolute;
+  right: -100px; top: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(232,163,23,0.2), transparent 70%);
+  border-radius: 50%;
 }
 .lp-promo-inner {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 44px 20px;
+  padding: 56px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 28px;
+  gap: 32px;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 .lp-promo-tag {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(255,255,255,0.2);
-  padding: 5px 12px;
-  border-radius: 999px;
-  font-size: 12.5px;
+  background: var(--hb-accent);
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 12px;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
 }
-.lp-promo-inner h2 { margin: 0 0 8px; font-size: 26px; font-weight: 800; }
-.lp-promo-inner p { margin: 0; max-width: 560px; opacity: 0.95; line-height: 1.55; }
+.lp-promo-inner h2 { margin: 0 0 10px; font-size: 28px; font-weight: 800; }
+.lp-promo-inner p { margin: 0; max-width: 560px; opacity: 0.95; line-height: 1.6; font-size: 15px; }
 
-/* ---- Beneficios ---- */
+/* ---- Beneficios (estilo Prymera) ---- */
 .lp-benefits {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
-.lp-benefit { text-align: center; padding: 10px; }
+.lp-benefit { text-align: center; padding: 16px; }
 .lp-benefit-icon {
-  width: 60px; height: 60px;
-  margin: 0 auto 14px;
+  width: 64px; height: 64px;
+  margin: 0 auto 16px;
   border-radius: 50%;
-  background: var(--hb-red-light);
-  color: var(--hb-red);
+  background: var(--hb-primary-light);
+  color: var(--hb-primary);
   display: grid;
   place-items: center;
 }
-.lp-benefit h3 { margin: 0 0 6px; font-size: 17px; }
-.lp-benefit p { margin: 0; color: var(--hb-muted); font-size: 14px; line-height: 1.5; }
+.lp-benefit h3 { margin: 0 0 8px; font-size: 17px; color: var(--hb-primary); }
+.lp-benefit p { margin: 0; color: var(--hb-muted); font-size: 14px; line-height: 1.55; }
 
-/* ---- Footer ---- */
-.lp-footer { background: #1e1722; color: #d9d2dd; }
+/* ---- Blog (estilo Prymera) ---- */
+.lp-blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.lp-blog-card {
+  background: #fff;
+  border: 1px solid var(--hb-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--hb-shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.lp-blog-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.08); }
+.lp-blog-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: var(--hb-primary-light);
+}
+.lp-blog-body { padding: 20px; }
+.lp-blog-tag {
+  display: inline-block;
+  background: var(--hb-primary-light);
+  color: var(--hb-primary);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.lp-blog-body h3 { margin: 0 0 8px; font-size: 16px; color: var(--hb-text); }
+.lp-blog-body p { margin: 0; font-size: 13.5px; color: var(--hb-muted); line-height: 1.5; }
+
+/* ---- Testimonios ---- */
+.lp-testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.lp-testimonial {
+  background: #fff;
+  border: 1px solid var(--hb-border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--hb-shadow);
+}
+.lp-testimonial-text {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--hb-text);
+  margin-bottom: 16px;
+  font-style: italic;
+}
+.lp-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.lp-testimonial-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--hb-primary);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+.lp-testimonial-name { font-weight: 700; font-size: 14px; }
+.lp-testimonial-role { font-size: 12px; color: var(--hb-muted); }
+
+/* ---- Simulador ---- */
+.lp-simulator {
+  background: var(--hb-bg);
+  border: 1px solid var(--hb-border);
+  border-radius: 12px;
+  padding: 32px;
+}
+.lp-simulator h3 { margin: 0 0 20px; font-size: 20px; color: var(--hb-primary); }
+
+/* ---- Footer (estilo Prymera) ---- */
+.lp-footer { background: #001a33; color: #c8d6e5; }
 .lp-footer-inner {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 48px 20px 36px;
+  padding: 56px 20px 40px;
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
-  gap: 28px;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr 1.2fr;
+  gap: 32px;
 }
-.lp-footer-brand p { font-size: 13.5px; line-height: 1.6; margin: 16px 0; max-width: 280px; }
+.lp-footer-brand p { font-size: 13.5px; line-height: 1.7; margin: 18px 0; max-width: 300px; }
 .lp-social { display: flex; gap: 10px; }
 .lp-social a {
-  width: 34px; height: 34px;
+  width: 36px; height: 36px;
   border-radius: 50%;
   background: rgba(255,255,255,0.1);
   color: #fff;
   display: grid;
   place-items: center;
+  transition: background 0.2s;
 }
-.lp-social a:hover { background: var(--hb-red); }
-.lp-footer-col h4 { margin: 0 0 14px; font-size: 14px; color: #fff; }
+.lp-social a:hover { background: var(--hb-accent); }
+.lp-footer-col h4 { margin: 0 0 16px; font-size: 14px; color: #fff; font-weight: 700; }
 .lp-footer-col ul { list-style: none; padding: 0; margin: 0; }
-.lp-footer-col li { margin-bottom: 9px; }
-.lp-footer-col a { color: #b8aebf; font-size: 13.5px; }
+.lp-footer-col li { margin-bottom: 10px; }
+.lp-footer-col a { color: #8fa8c8; font-size: 13.5px; transition: color 0.2s; }
 .lp-footer-col a:hover { color: #fff; text-decoration: none; }
-.lp-contact li { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #b8aebf; }
-.lp-footer-legal {
-  text-align: center;
-  padding: 16px;
-  font-size: 12.5px;
-  color: #9a90a1;
+.lp-contact li { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #8fa8c8; }
+.lp-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 20px 0;
+  margin-top: 20px;
 }
+.lp-footer-bottom-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12.5px;
+  color: #6b7f99;
+}
+.lp-footer-legal-links { display: flex; gap: 20px; }
+.lp-footer-legal-links a { color: #6b7f99; }
+.lp-footer-legal-links a:hover { color: #fff; }
 
 /* ---- Responsive landing ---- */
 @media (max-width: 900px) {
-  .lp-hero-inner { grid-template-columns: 1fr; }
-  .lp-hero-text h1 { font-size: 34px; }
-  .lp-nav-links { display: none; }
-  .lp-cta { display: none; }
+  .lp-hero-inner { text-align: center; justify-content: center; }
+  .lp-hero-title { font-size: 36px; }
+  .lp-hero-content { padding-right: 0; align-items: center; }
+  .lp-hero-btn { align-self: center; }
+  .lp-hero-bg-img { object-position: center center; }
+  .lp-main-nav { display: none; }
   .lp-burger { display: inline-flex; }
+  .lp-topbar-left { display: none; }
   .lp-quickbar { grid-template-columns: repeat(2, 1fr); }
   .lp-products { grid-template-columns: repeat(2, 1fr); }
   .lp-benefits { grid-template-columns: repeat(2, 1fr); }
+  .lp-testimonials { grid-template-columns: 1fr; }
+  .lp-blog-grid { grid-template-columns: 1fr; }
   .lp-footer-inner { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 560px) {
+  .lp-hero-title { font-size: 28px; }
+  .lp-hero-subtitle { font-size: 16px; }
+  .lp-hero-dots { bottom: 90px; }
   .lp-quickbar { grid-template-columns: 1fr 1fr; }
   .lp-products { grid-template-columns: 1fr; }
   .lp-benefits { grid-template-columns: 1fr; }
   .lp-footer-inner { grid-template-columns: 1fr; }
-  .lp-hero-text h1 { font-size: 28px; }
+  .lp-footer-bottom-inner { flex-direction: column; gap: 10px; text-align: center; }
+  .lp-topbar-right a:not(:has(svg)) { display: none; }
 }
 
 /* ============================================================
-   APP AUTENTICADA — LAYOUT TIPO BBVA (colores Banco Andino)
+   APP AUTENTICADA — DISEÑO PRYMERA CORPORATIVO
+   Colores: #002244 (azul oscuro), #ffffff (blanco), #e8a317 (dorado)
    ============================================================ */
 
-/* ---- Barra superior oscura ---- */
-.bbva-topbar {
-  background: linear-gradient(90deg, #37060d, #5a0c16);
+/* ---- Header autenticado ---- */
+.hb-auth-header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Top bar */
+.hb-auth-topbar {
+  background: linear-gradient(90deg, #001a33, #002244);
   color: #fff;
 }
-.bbva-topbar-inner {
+.hb-auth-topbar-inner {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 12px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
 }
-.bbva-brand { background: none; border: none; cursor: pointer; padding: 0; }
-.bbva-topbar-right { display: flex; align-items: center; gap: 14px; }
+.hb-auth-brand { background: none; border: none; cursor: pointer; padding: 0; }
+.hb-auth-topbar-right { display: flex; align-items: center; gap: 14px; }
 
-.bbva-hide-toggle {
+/* Toggle ocultar importes */
+.hb-auth-hide {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background: rgba(255,255,255,0.1);
   color: #fff;
   border: none;
-  padding: 7px 12px;
-  border-radius: 999px;
+  padding: 7px 14px;
+  border-radius: 6px;
   font-size: 12.5px;
   font-weight: 600;
-}
-.bbva-hide-toggle:hover { background: rgba(255,255,255,0.18); }
-.bbva-switch {
-  width: 34px; height: 18px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.35);
-  position: relative;
   transition: background 0.15s;
 }
-.bbva-switch.on { background: var(--hb-turquesa); }
-.bbva-switch-dot {
+.hb-auth-hide:hover { background: rgba(255,255,255,0.18); }
+.hb-auth-switch {
+  width: 34px; height: 18px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.3);
+  position: relative;
+  transition: background 0.2s;
+}
+.hb-auth-switch.on { background: #e8a317; }
+.hb-auth-switch-dot {
   position: absolute;
   top: 2px; left: 2px;
   width: 14px; height: 14px;
   border-radius: 50%;
   background: #fff;
-  transition: transform 0.15s;
+  transition: transform 0.2s;
 }
-.bbva-switch.on .bbva-switch-dot { transform: translateX(16px); }
+.hb-auth-switch.on .hb-auth-switch-dot { transform: translateX(16px); }
 
-.bbva-user-wrap { position: relative; }
-.bbva-user {
+/* Usuario */
+.hb-auth-user-wrap { position: relative; }
+.hb-auth-user {
   display: inline-flex;
   align-items: center;
   gap: 9px;
@@ -922,186 +1216,196 @@ button {
   color: #fff;
   cursor: pointer;
 }
-.bbva-avatar {
-  width: 34px; height: 34px;
+.hb-auth-avatar {
+  width: 36px; height: 36px;
   border-radius: 50%;
-  background: var(--hb-turquesa);
-  color: #fff;
+  background: #e8a317;
+  color: #002244;
   display: grid; place-items: center;
   font-weight: 800;
   font-size: 13px;
 }
-.bbva-user-text { display: flex; flex-direction: column; line-height: 1.2; text-align: left; }
-.bbva-user-text strong { font-size: 13px; }
-.bbva-user-text small { font-size: 11px; opacity: 0.85; }
-.bbva-user-menu {
+.hb-auth-user-text { display: flex; flex-direction: column; line-height: 1.2; text-align: left; }
+.hb-auth-user-text strong { font-size: 13px; }
+.hb-auth-user-text small { font-size: 11px; opacity: 0.8; }
+.hb-auth-user-menu {
   position: absolute;
   top: 110%;
   right: 0;
   background: #fff;
-  color: var(--hb-text);
+  color: #1a1a2e;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  min-width: 210px;
+  min-width: 220px;
   padding: 6px;
   z-index: 70;
 }
-.bbva-user-menu button {
+.hb-auth-user-menu button {
   display: flex; align-items: center; gap: 10px;
   width: 100%; text-align: left;
   background: none; border: none;
   padding: 10px 12px; border-radius: 8px;
-  font-size: 14px; color: var(--hb-text);
+  font-size: 14px; color: #1a1a2e;
 }
-.bbva-user-menu button:hover { background: var(--hb-red-light); color: var(--hb-red-dark); }
-.bbva-salir {
+.hb-auth-user-menu button:hover { background: #e8eef5; color: #002244; }
+.hb-auth-logout {
   display: inline-flex; align-items: center; gap: 6px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.12);
   color: #fff; border: none;
-  padding: 8px 14px; border-radius: 8px;
+  padding: 8px 14px; border-radius: 6px;
   font-size: 13px; font-weight: 600;
+  transition: background 0.15s;
 }
-.bbva-salir:hover { background: rgba(255,255,255,0.28); }
+.hb-auth-logout:hover { background: rgba(255,255,255,0.25); }
 
-/* ---- Barra de pestañas ---- */
-.bbva-tabs {
-  background: var(--hb-red);
-  box-shadow: var(--hb-shadow);
-  position: sticky; top: 0; z-index: 40;
+/* Navegación con iconos */
+.hb-auth-nav {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
 }
-.bbva-tabs-inner {
+.hb-auth-nav-inner {
   max-width: 1180px;
   margin: 0 auto;
   padding: 0 12px;
   display: flex;
-  gap: 2px;
+  gap: 4px;
 }
-.bbva-tab {
+.hb-auth-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   background: transparent;
   border: none;
-  color: rgba(255,255,255,0.88);
-  font-size: 14.5px;
+  color: #64748b;
+  font-size: 14px;
   font-weight: 600;
   padding: 14px 20px;
   cursor: pointer;
   border-bottom: 3px solid transparent;
+  transition: all 0.2s;
 }
-.bbva-tab:hover { background: rgba(255,255,255,0.1); color: #fff; }
-.bbva-tab.active { color: #fff; border-bottom-color: #fff; background: rgba(0,0,0,0.08); }
+.hb-auth-nav-item:hover { color: #002244; background: #f1f5f9; }
+.hb-auth-nav-item.active {
+  color: #002244;
+  border-bottom-color: #e8a317;
+  background: #f8fafc;
+}
+.hb-auth-nav-item svg { color: inherit; }
 
 /* ---- Contenedor ---- */
-.bbva-main { background: var(--hb-bg); min-height: calc(100vh - 120px); }
+.hb-auth-header + .bbva-main { margin-top: 0; }
+.bbva-main { background: #f5f7fa; min-height: calc(100vh - 120px); }
 .bbva-container { max-width: 1180px; margin: 0 auto; padding: 24px 20px 56px; }
 
 /* ---- Page layout 2 columnas ---- */
-.bbva-page { display: grid; grid-template-columns: 1fr 320px; gap: 22px; align-items: start; }
+.bbva-page { display: grid; grid-template-columns: 1fr 320px; gap: 24px; align-items: start; }
 .bbva-page-main { min-width: 0; }
-.bbva-page-aside { position: sticky; top: 76px; }
+.bbva-page-aside { position: sticky; top: 130px; }
 .bbva-page-head {
   display: flex; align-items: flex-start; justify-content: space-between;
-  gap: 12px; margin-bottom: 16px; flex-wrap: wrap;
+  gap: 12px; margin-bottom: 18px; flex-wrap: wrap;
 }
-.bbva-page-title { font-size: 24px; font-weight: 800; margin: 0 0 2px; color: #1f2430; }
-.bbva-page-sub { color: var(--hb-muted); margin: 0; font-size: 13.5px; }
+.bbva-page-title { font-size: 24px; font-weight: 800; margin: 0 0 2px; color: #002244; }
+.bbva-page-sub { color: #6b7280; margin: 0; font-size: 13.5px; }
 .bbva-page-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 
 /* ---- Botones ---- */
 .bbva-btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  background: var(--hb-red); color: #fff; border: none;
-  padding: 11px 20px; border-radius: 9px; font-size: 14px; font-weight: 700;
+  background: #002244; color: #fff; border: none;
+  padding: 11px 20px; border-radius: 8px; font-size: 14px; font-weight: 700;
   cursor: pointer;
 }
-.bbva-btn:hover { background: var(--hb-red-dark); }
+.bbva-btn:hover { background: #001a33; }
 .bbva-btn:disabled { opacity: 0.55; cursor: not-allowed; }
 .bbva-btn-gray {
   display: inline-flex; align-items: center; gap: 8px;
   background: #eef0f3; color: #374151; border: none;
-  padding: 11px 20px; border-radius: 9px; font-size: 14px; font-weight: 600; cursor: pointer;
+  padding: 11px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer;
 }
 .bbva-btn-gray:hover { background: #e2e6ea; }
 .bbva-btn-ghost {
   display: inline-flex; align-items: center; gap: 7px;
-  background: #fff; color: var(--hb-red); border: 1px solid var(--hb-border);
+  background: #fff; color: #002244; border: 1px solid #e2e8f0;
   padding: 9px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer;
 }
-.bbva-btn-ghost:hover { border-color: var(--hb-red); background: var(--hb-red-light); }
+.bbva-btn-ghost:hover { border-color: #002244; background: #e8eef5; }
 .bbva-btn-ghost.sm { padding: 6px 11px; font-size: 12.5px; }
 .bbva-btn-ghost:disabled { opacity: 0.55; cursor: not-allowed; }
 .bbva-link {
   display: inline-flex; align-items: center; gap: 4px;
-  background: none; border: none; color: var(--hb-turquesa);
+  background: none; border: none; color: #0066cc;
   font-weight: 700; font-size: 13px; cursor: pointer;
 }
 .bbva-link:hover { text-decoration: underline; }
 
 /* ---- Panel de acciones (aside) ---- */
 .bbva-actions {
-  background: #fff; border: 1px solid var(--hb-border);
-  border-radius: var(--hb-radius); box-shadow: var(--hb-shadow);
+  background: #fff; border: 1px solid #e2e8f0;
+  border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
   overflow: hidden;
 }
 .bbva-actions-title {
   margin: 0; padding: 14px 16px;
   font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;
-  color: #fff; background: var(--hb-turquesa);
+  color: #fff; background: #002244;
 }
 .bbva-actions-list { padding: 6px; }
 .bbva-action {
   display: flex; align-items: center; gap: 12px; width: 100%;
   background: none; border: none; cursor: pointer;
   padding: 11px 12px; border-radius: 9px; text-align: left;
-  font-size: 13.5px; font-weight: 600; color: var(--hb-text);
+  font-size: 13.5px; font-weight: 600; color: #1a1a2e;
 }
-.bbva-action:hover { background: var(--hb-bg); }
+.bbva-action:hover { background: #f5f7fa; }
 .bbva-action-ico {
   width: 34px; height: 34px; border-radius: 8px;
-  background: #e6f7f6; color: var(--hb-turquesa);
+  background: #e8eef5; color: #002244;
   display: grid; place-items: center; flex-shrink: 0;
 }
 .bbva-action-label { flex: 1; }
-.bbva-action-chev { color: var(--hb-muted); }
+.bbva-action-chev { color: #6b7280; }
 
 /* ---- Inicio: saludo + KPIs ---- */
-.bbva-hello h1 { font-size: 22px; margin: 0 0 4px; color: #1f2430; }
-.bbva-hello p { margin: 0 0 18px; color: var(--hb-muted); font-size: 14px; }
+.bbva-hello h1 { font-size: 22px; margin: 0 0 4px; color: #002244; }
+.bbva-hello p { margin: 0 0 18px; color: #6b7280; font-size: 14px; }
 .bbva-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px; }
 .bbva-kpi {
-  background: #fff; border: 1px solid var(--hb-border); border-left: 4px solid var(--hb-red);
-  border-radius: var(--hb-radius); box-shadow: var(--hb-shadow);
+  background: #fff; border: 1px solid #e2e8f0; border-left: 4px solid #002244;
+  border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
   padding: 16px 18px; display: flex; gap: 14px; align-items: center;
 }
-.bbva-kpi:nth-child(2) { border-left-color: var(--hb-turquesa); }
+.bbva-kpi:nth-child(2) { border-left-color: #e8a317; }
 .bbva-kpi-ico { width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center; flex-shrink: 0; }
-.bbva-kpi-label { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--hb-muted); text-transform: uppercase; letter-spacing: 0.3px; }
+.bbva-kpi-label { display: flex; align-items: center; gap: 5px; font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.3px; }
 .bbva-kpi-val { display: block; font-size: 25px; font-weight: 800; margin: 3px 0; }
-.bbva-kpi small { color: var(--hb-muted); font-size: 12px; }
+.bbva-kpi small { color: #6b7280; font-size: 12px; }
 
-/* ---- Listas de productos (resumen) ---- */
+/* ---- Listas de productos ---- */
 .bbva-prodlist { list-style: none; padding: 0; margin: 0; }
 .bbva-prodlist li {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 13px 6px; border-bottom: 1px solid var(--hb-border); cursor: pointer;
+  padding: 13px 6px; border-bottom: 1px solid #e2e8f0; cursor: pointer;
 }
-.bbva-prodlist li:hover { background: #fcfcfd; }
+.bbva-prodlist li:hover { background: #f8fafc; }
 .bbva-prod-info { display: flex; flex-direction: column; gap: 3px; }
-.bbva-prod-info small { color: var(--hb-muted); font-size: 12.5px; display: flex; align-items: center; gap: 6px; }
-.bbva-prod-amt { display: flex; align-items: center; gap: 8px; color: var(--hb-muted); }
+.bbva-prod-info small { color: #6b7280; font-size: 12.5px; display: flex; align-items: center; gap: 6px; }
+.bbva-prod-amt { display: flex; align-items: center; gap: 8px; color: #6b7280; }
 .bbva-prodlist-total {
   display: flex; align-items: center; justify-content: space-between;
   padding: 13px 6px; cursor: default;
-  font-size: 13.5px; color: var(--hb-muted);
+  font-size: 13.5px; color: #6b7280;
 }
 .bbva-prodlist-total:hover { background: none; }
-.bbva-money-strong { font-size: 17px; font-weight: 800; color: var(--hb-red); }
-.bbva-empty { text-align: center; color: var(--hb-muted); padding: 22px 10px; margin: 0; }
+.bbva-money-strong { font-size: 17px; font-weight: 800; color: #002244; }
+.bbva-empty { text-align: center; color: #6b7280; padding: 22px 10px; margin: 0; }
 .bbva-cell-prod { display: flex; flex-direction: column; }
-.bbva-cell-prod small { color: var(--hb-muted); font-size: 11px; }
+.bbva-cell-prod small { color: #6b7280; font-size: 11px; }
 
 /* ---- Cuentas de ahorro (acordeón) ---- */
 .bbva-acc-list { display: flex; flex-direction: column; }
-.bbva-acc { border-bottom: 1px solid var(--hb-border); }
-.bbva-acc.open { background: #fcfbfc; border-radius: 10px; }
+.bbva-acc { border-bottom: 1px solid #e2e8f0; }
+.bbva-acc.open { background: #f8fafc; border-radius: 10px; }
 .bbva-acc-head {
   display: flex; align-items: center; justify-content: space-between;
   gap: 14px; padding: 14px 8px; flex-wrap: wrap;
@@ -1109,11 +1413,11 @@ button {
 .bbva-acc-main { display: flex; align-items: center; gap: 12px; }
 .bbva-acc-ico {
   width: 42px; height: 42px; border-radius: 10px;
-  background: var(--hb-red-light); color: var(--hb-red);
+  background: #e8eef5; color: #002244;
   display: grid; place-items: center; flex-shrink: 0;
 }
 .bbva-acc-main strong { display: block; font-size: 15px; }
-.bbva-acc-main small { color: var(--hb-muted); font-size: 12.5px; }
+.bbva-acc-main small { color: #6b7280; font-size: 12.5px; }
 .bbva-acc-right { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
 .bbva-acc-saldo { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
 .bbva-acc-saldo .hb-money { font-size: 17px; font-weight: 800; }
@@ -1123,9 +1427,9 @@ button {
 
 .bbva-detalle {
   padding: 16px 12px 18px; margin: 0 4px 8px;
-  border-top: 1px dashed var(--hb-border);
+  border-top: 1px dashed #e2e8f0;
 }
-.bbva-detalle-title { display: flex; align-items: center; gap: 8px; margin: 0 0 12px; font-size: 14px; color: var(--hb-red); }
+.bbva-detalle-title { display: flex; align-items: center; gap: 8px; margin: 0 0 12px; font-size: 14px; color: #002244; }
 .bbva-detalle-sub { margin: 16px 0 8px; font-size: 13px; color: #374151; }
 .bbva-cts-disp {
   display: flex; align-items: center; justify-content: space-between;
@@ -1133,28 +1437,28 @@ button {
   background: #e6f7f6; border: 1px solid #b8e6e4; border-radius: 10px;
 }
 .bbva-cts-disp span { display: flex; align-items: center; gap: 8px; font-weight: 600; color: #0c6b68; font-size: 13.5px; }
-.bbva-cts-disp .bbva-money-strong { color: var(--hb-turquesa); }
+.bbva-cts-disp .bbva-money-strong { color: #00a9a5; }
 
 /* ---- Operaciones hub ---- */
 .bbva-op-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .bbva-op-card {
   display: flex; align-items: center; gap: 16px;
-  background: #fff; border: 1px solid var(--hb-border);
-  border-radius: var(--hb-radius); box-shadow: var(--hb-shadow);
+  background: #fff; border: 1px solid #e2e8f0;
+  border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
   padding: 20px; cursor: pointer; text-align: left;
   transition: transform 0.12s, box-shadow 0.12s;
 }
-.bbva-op-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.10); }
+.bbva-op-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
 .bbva-op-ico { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; flex-shrink: 0; }
 .bbva-op-body { flex: 1; display: flex; flex-direction: column; gap: 3px; }
 .bbva-op-body strong { font-size: 16px; }
-.bbva-op-body small { color: var(--hb-muted); font-size: 13px; line-height: 1.45; }
-.bbva-op-chev { color: var(--hb-muted); flex-shrink: 0; }
+.bbva-op-body small { color: #6b7280; font-size: 13px; line-height: 1.45; }
+.bbva-op-chev { color: #6b7280; flex-shrink: 0; }
 
-/* ---- Formularios / confirmación ---- */
+/* ---- Formularios ---- */
 .hb-field-label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #374151; }
-.bbva-saldo-hint { font-size: 13px; color: var(--hb-muted); margin: -4px 0 14px; }
-.bbva-field-note { display: block; color: var(--hb-muted); font-size: 12px; margin-top: 5px; }
+.bbva-saldo-hint { font-size: 13px; color: #6b7280; margin: -4px 0 14px; }
+.bbva-field-note { display: block; color: #6b7280; font-size: 12px; margin-top: 5px; }
 .bbva-form-actions { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
 .bbva-confirm-lead { font-size: 14px; font-weight: 600; margin: 0 0 14px; }
 .bbva-info-note {
@@ -1163,53 +1467,96 @@ button {
 }
 .bbva-cuota-box {
   display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
-  background: var(--hb-bg); border: 1px solid var(--hb-border);
+  background: #f5f7fa; border: 1px solid #e2e8f0;
   border-radius: 10px; padding: 14px 16px; margin: 4px 0 16px;
 }
-.bbva-cuota-box > span { color: var(--hb-muted); font-size: 13px; }
+.bbva-cuota-box > span { color: #6b7280; font-size: 13px; }
 .bbva-cuota-box .bbva-money-strong { margin-left: auto; font-size: 18px; }
 
-/* ---- Servicios (grid de empresas) ---- */
+/* ---- Servicios ---- */
 .bbva-serv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .bbva-serv {
   display: flex; align-items: center; gap: 10px;
-  background: #fff; border: 1.5px solid var(--hb-border); border-radius: 10px;
+  background: #fff; border: 1.5px solid #e2e8f0; border-radius: 10px;
   padding: 11px 12px; cursor: pointer; text-align: left;
 }
-.bbva-serv:hover { border-color: var(--hb-turquesa); }
-.bbva-serv.sel { border-color: var(--hb-red); background: var(--hb-red-light); }
+.bbva-serv:hover { border-color: #00a9a5; }
+.bbva-serv.sel { border-color: #002244; background: #e8eef5; }
 .bbva-serv-ico { width: 36px; height: 36px; border-radius: 9px; display: grid; place-items: center; flex-shrink: 0; }
 .bbva-serv span:last-child { display: flex; flex-direction: column; }
 .bbva-serv strong { font-size: 13px; }
-.bbva-serv small { color: var(--hb-muted); font-size: 11.5px; }
+.bbva-serv small { color: #6b7280; font-size: 11.5px; }
 
 /* ---- Comprobante ---- */
 .bbva-comprobante-card {
-  background: #fff; border: 1px solid var(--hb-border);
-  border-radius: var(--hb-radius); box-shadow: var(--hb-shadow);
-  padding: 22px; border-top: 5px solid var(--hb-green);
+  background: #fff; border: 1px solid #e2e8f0;
+  border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  padding: 22px; border-top: 5px solid #2e7d32;
 }
 .bbva-comprobante-head { display: flex; align-items: flex-start; gap: 14px; }
-.bbva-comprobante-check { color: var(--hb-green); flex-shrink: 0; }
-.bbva-comprobante-head h3 { margin: 0; font-size: 18px; color: var(--hb-green); }
-.bbva-comprobante-head p { margin: 3px 0 0; color: var(--hb-muted); font-size: 13.5px; }
+.bbva-comprobante-check { color: #2e7d32; flex-shrink: 0; }
+.bbva-comprobante-head h3 { margin: 0; font-size: 18px; color: #2e7d32; }
+.bbva-comprobante-head p { margin: 3px 0 0; color: #6b7280; font-size: 13.5px; }
 .bbva-print {
-  margin-left: auto; background: var(--hb-bg); border: 1px solid var(--hb-border);
-  border-radius: 8px; padding: 8px; color: var(--hb-muted); cursor: pointer;
+  margin-left: auto; background: #f5f7fa; border: 1px solid #e2e8f0;
+  border-radius: 8px; padding: 8px; color: #6b7280; cursor: pointer;
 }
-.bbva-print:hover { color: var(--hb-red); border-color: var(--hb-red); }
+.bbva-print:hover { color: #002244; border-color: #002244; }
 .bbva-comprobante-sim {
-  background: #fef3e2; border: 1px solid #f6dcae; color: var(--hb-amber);
+  background: #fef3e2; border: 1px solid #f6dcae; color: #f57f17;
   border-radius: 8px; padding: 9px 12px; font-size: 12.5px; margin: 14px 0 0;
 }
 .bbva-comprobante-rows {
   margin: 18px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
 }
-.bbva-comprobante-rows dt { font-size: 12px; color: var(--hb-muted); margin-bottom: 2px; }
+.bbva-comprobante-rows dt { font-size: 12px; color: #6b7280; margin-bottom: 2px; }
 .bbva-comprobante-rows dd { margin: 0; font-size: 15px; font-weight: 600; }
-.bbva-comprobante-nota { margin: 16px 0 0; font-size: 12.5px; color: var(--hb-muted); }
+.bbva-comprobante-nota { margin: 16px 0 0; font-size: 12.5px; color: #6b7280; }
 
-/* ---- Responsive app ---- */
+/* ---- Login ---- */
+.hb-login-bg {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #002244, #003366 50%, #004d99);
+  position: relative;
+}
+.hb-login-bg::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: #e8a317;
+}
+.hb-login-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  padding: 36px 36px 40px;
+  width: 100%;
+  max-width: 420px;
+}
+.hb-login-franja {
+  height: 4px;
+  border-radius: 4px;
+  background: #e8a317;
+  margin-bottom: 24px;
+}
+.hb-login-head { text-align: center; margin-bottom: 24px; }
+.hb-login-head .hb-logo-badge {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  font-size: 26px;
+  margin: 0 auto 12px;
+  background: #002244;
+  color: #fff;
+}
+.hb-login-head h1 { margin: 0; font-size: 22px; color: #002244; }
+.hb-login-head p { margin: 4px 0 0; color: #6b7280; font-size: 13px; }
+.hb-login-hint { margin-top: 18px; font-size: 12px; text-align: center; color: #6b7280; }
+
+/* ---- Responsive ---- */
 @media (max-width: 900px) {
   .bbva-page { grid-template-columns: 1fr; }
   .bbva-page-aside { position: static; }
@@ -1217,11 +1564,11 @@ button {
   .bbva-op-grid { grid-template-columns: 1fr; }
   .bbva-serv-grid { grid-template-columns: 1fr 1fr; }
   .bbva-comprobante-rows { grid-template-columns: 1fr; }
-  .bbva-salir { display: none; }
+  .hb-auth-logout { display: none; }
+  .hb-auth-nav-item span { display: none; }
 }
 @media (max-width: 560px) {
-  .bbva-hide-toggle span:not(.bbva-switch):not(.bbva-switch-dot) { display: none; }
-  .bbva-user-text { display: none; }
+  .hb-auth-hide span:not(.hb-auth-switch):not(.hb-auth-switch-dot) { display: none; }
+  .hb-auth-user-text { display: none; }
   .bbva-serv-grid { grid-template-columns: 1fr; }
-  .bbva-tab { padding: 12px 14px; font-size: 13.5px; }
 }

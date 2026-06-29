@@ -1,60 +1,42 @@
 /**
- * Logo de marca de Banco Andino.
- * Isotipo: flor andina multicolor — pétalos con los colores del textil
- * (magenta, naranja, amarillo, verde, turquesa, morado) y centro cálido.
+ * Logo de marca Prymera — "Primero eres tú".
+ * Isotipo multicolor (rojo, verde, amarillo) + texto blanco.
  *
  * @param {Object} props
  * @param {number}  [props.size=44]          Tamaño del isotipo en px.
- * @param {boolean} [props.wordmark=true]    Mostrar el texto "Banco Andino".
+ * @param {boolean} [props.wordmark=true]    Mostrar el texto "Prymera".
  * @param {'dark'|'light'} [props.variant='dark'] Color del texto.
- * @param {string}  [props.subtitle='BANCA POR INTERNET] Texto secundario bajo el nombre.
+ * @param {string}  [props.subtitle='Primero eres tú'] Texto secundario.
  */
-
-// Pétalos: ángulo de rotación + color (paleta de la manta andina).
-const PETALOS = [
-  { a: 0, c: '#e6398b' }, // magenta
-  { a: 60, c: '#f7941e' }, // naranja
-  { a: 120, c: '#fbc02d' }, // amarillo
-  { a: 180, c: '#4caf50' }, // verde
-  { a: 240, c: '#00a9a5' }, // turquesa
-  { a: 300, c: '#8e24aa' }, // morado
-]
-
 export default function Logo({
   size = 44,
   wordmark = true,
   variant = 'dark',
-  subtitle = 'BANCA POR INTERNET',
+  subtitle = 'Primero eres tú',
 }) {
-  const textColor = variant === 'light' ? '#ffffff' : '#e2132b'
-  const subColor = variant === 'light' ? 'rgba(255,255,255,.85)' : '#6b6b7b'
-  const nameSize = Math.round(size * 0.5)
-  const subSize = Math.max(9, Math.round(size * 0.23))
+  const textColor = variant === 'light' ? '#ffffff' : '#003366'
+  const nameSize = Math.round(size * 0.48)
+  const subSize = Math.max(9, Math.round(size * 0.24))
 
   return (
-    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 12 }}>
+    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 10 }}>
+      {/* Isotipo Prymera — forma de persona/estrella multicolor */}
       <svg
         width={size}
         height={size}
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
-        aria-label="Banco Andino"
+        aria-label="Prymera"
         role="img"
       >
-        {PETALOS.map((p) => (
-          <ellipse
-            key={p.a}
-            cx="24"
-            cy="13"
-            rx="6"
-            ry="11"
-            fill={p.c}
-            transform={`rotate(${p.a} 24 24)`}
-            opacity="0.95"
-          />
-        ))}
-        <circle cx="24" cy="24" r="7" fill="#fbc02d" />
-        <circle cx="24" cy="24" r="3.4" fill="#e2132b" />
+        {/* Forma principal roja */}
+        <path d="M24 4 C20 4, 12 8, 12 16 C12 24, 18 28, 24 28 C30 28, 36 24, 36 16 C36 8, 28 4, 24 4Z" fill="#e53935" />
+        {/* Elemento verde */}
+        <path d="M16 20 C12 22, 8 28, 10 34 C12 38, 16 40, 20 38 C24 36, 22 30, 16 20Z" fill="#43a047" />
+        {/* Elemento amarillo */}
+        <path d="M32 20 C36 22, 40 28, 38 34 C36 38, 32 40, 28 38 C24 36, 26 30, 32 20Z" fill="#fdd835" />
+        {/* Centro */}
+        <circle cx="24" cy="16" r="4" fill="#fff" />
       </svg>
 
       {wordmark && (
@@ -64,18 +46,20 @@ export default function Logo({
               fontWeight: 800,
               fontSize: nameSize,
               color: textColor,
-              letterSpacing: '-0.5px',
+              letterSpacing: '-0.3px',
             }}
           >
-            Banco Andino
+            Prymera
           </span>
           {subtitle && (
             <span
               style={{
                 fontSize: subSize,
-                fontWeight: 700,
-                color: subColor,
-                letterSpacing: '1.2px',
+                fontWeight: 600,
+                fontStyle: 'italic',
+                color: variant === 'light' ? '#fdd835' : '#f57f17',
+                letterSpacing: '0.2px',
+                marginTop: 1,
               }}
             >
               {subtitle}

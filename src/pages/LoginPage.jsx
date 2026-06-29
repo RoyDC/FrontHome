@@ -49,7 +49,7 @@ export default function LoginPage() {
       <div className="hb-login-card">
         <div className="hb-login-franja" />
         <div className="hb-login-head" style={{ display: 'flex', justifyContent: 'center', marginBottom: 18 }}>
-          <Logo size={48} variant="dark" subtitle="BANCA POR INTERNET" />
+          <Logo size={48} variant="dark" subtitle="BANCA DIGITAL" />
         </div>
         <p style={{ textAlign: 'center', color: 'var(--hb-muted)', fontSize: 13, margin: '0 0 22px' }}>
           Ingresa con el número de tu tarjeta de ahorros
